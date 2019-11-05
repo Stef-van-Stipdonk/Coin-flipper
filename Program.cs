@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Diagnostics;
 namespace Coin_flipper
 {
     class Program
@@ -11,7 +11,8 @@ namespace Coin_flipper
             // Amount of coins to flip - converted to int
             int flipAmountInt;
             // Random number
-            var rng = new Random();
+            Random rng = new Random();
+            // rounded rng
             // Chances
             string chances;
             // chances but to double
@@ -30,6 +31,7 @@ namespace Coin_flipper
             int tailStreak = 0;
             // streak is heads
             int streakIsHeads = 0;
+            int coinOnSide = 0;
 
             Console.WriteLine("How many coins do you want to flip?");
             flipAmount = Console.ReadLine();
@@ -44,6 +46,7 @@ namespace Coin_flipper
                     Console.WriteLine("Enter a number:");
                     chances = Console.ReadLine();
                     chancesDouble = Convert.ToDouble(chances);
+                    Console.ReadLine();
                     if (chancesDouble < 1 && chancesDouble > 0)
                     {
                         correct = false;
@@ -61,10 +64,11 @@ namespace Coin_flipper
             }
 
 
-
+            Stopwatch stopwatch = Stopwatch.StartNew();
             for (int i = 0; i < flipAmountInt; i++)
             {
-                if (rng.NextDouble() < chancesDouble)
+                double randomRng = Math.Round(rng.NextDouble(), 3);
+                if (randomRng < chancesDouble && randomRng != 0.588)
                 {
                     if (streakIsHeads != 0)
                     {
@@ -78,7 +82,7 @@ namespace Coin_flipper
                         headStreak = streak;
                     }
                 }
-                else
+                if (randomRng > chancesDouble && randomRng != 0.588)
                 {
                     if (streakIsHeads != 1)
                     {
@@ -92,14 +96,22 @@ namespace Coin_flipper
                         tailStreak = streak;
                     }
                 }
+                if (randomRng == 0.588)
+                {
+                    coinOnSide++;
+                }
             }
-
+            stopwatch.Stop();
             double tailChance = 1 - chancesDouble;
+            int gutterCoin = heads + tails + coinOnSide - flipAmountInt;
             Console.Clear();
+            Console.WriteLine("\n\n" + flipAmountInt + " coins have been flipped in " + stopwatch.ElapsedMilliseconds + " milliseconds\n");
             Console.WriteLine("Heads had a " + chancesDouble + " chance to win");
             Console.WriteLine("Tails had a " + tailChance + " chance to win");
             Console.WriteLine("\nHeads has been flipped: " + heads);
             Console.WriteLine("Tails has been flipped: " + tails);
+            Console.WriteLine("The coin has landed on its side " + coinOnSide + " times");
+            Console.WriteLine("The coin landed in the gutter " + Math.Abs(gutterCoin) + " times");
             if (tailStreak > headStreak)
             {
                 Console.WriteLine("\nThe longest streak belongs to tails: " + tailStreak);
