@@ -10,17 +10,18 @@ namespace Coin_flipper
             string flipAmount;
             // Amount of coins to flip - converted to int
             int flipAmountInt;
-            // Random numer
+            // Random number
             var rng = new Random();
             // Chances
             string chances;
-            // Chances int
-            decimal chancesDec = 0;
+            // chances but to double
+            double chancesDouble = 0.5;
+            // Correct enter
+            bool correct = true;
             // How many heads have been flipped
             int heads = 0;
             // How many tails have been flipped
             int tails = 0;
-
             // Current streak
             int streak = 0;
             // Longest head streak
@@ -33,16 +34,37 @@ namespace Coin_flipper
             Console.WriteLine("How many coins do you want to flip?");
             flipAmount = Console.ReadLine();
             flipAmountInt = Convert.ToInt32(flipAmount);
+            Console.Clear();
+            while (correct)
+            {
+                try
+                {
+                    Console.WriteLine("What are the chances?");
+                    Console.WriteLine("If you enter 0.3 heads will have a 30% chance of winning and tails has 70%");
+                    Console.WriteLine("Enter a number:");
+                    chances = Console.ReadLine();
+                    chancesDouble = Convert.ToDouble(chances);
+                    if (chancesDouble < 1 && chancesDouble > 0)
+                    {
+                        correct = false;
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Enter a number between 0.0 and 1.0");
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("Oops something went wrong, please make sure you enter a number like this => 0.1\nMake sure the number is between 0.0 and 1");
+                }
+            }
 
-            // Console.WriteLine("What are the chances?");
-            // Console.WriteLine("If you enter 0.3 heads will have a 30% chance of winning and tails has 70%");
-            // Console.WriteLine("Enter a number:");
-            // chances = Console.ReadLine();
-            // chancesDec = decimal.Parse(chances);
+
 
             for (int i = 0; i < flipAmountInt; i++)
             {
-                if (rng.NextDouble() < 0.5)
+                if (rng.NextDouble() < chancesDouble)
                 {
                     if (streakIsHeads != 0)
                     {
@@ -71,15 +93,20 @@ namespace Coin_flipper
                     }
                 }
             }
-            Console.WriteLine("Heads has been flipped: " + heads);
+
+            double tailChance = 1 - chancesDouble;
+            Console.Clear();
+            Console.WriteLine("Heads had a " + chancesDouble + " chance to win");
+            Console.WriteLine("Tails had a " + tailChance + " chance to win");
+            Console.WriteLine("\nHeads has been flipped: " + heads);
             Console.WriteLine("Tails has been flipped: " + tails);
             if (tailStreak > headStreak)
             {
-                Console.WriteLine("The longest streak belongs to tails: " + tailStreak);
+                Console.WriteLine("\nThe longest streak belongs to tails: " + tailStreak);
             }
             else
             {
-                Console.WriteLine("The longest streak belongs to heads: " + headStreak);
+                Console.WriteLine("\nThe longest streak belongs to heads: " + headStreak);
             }
             Console.WriteLine("\nPress enter to continue");
             Console.ReadLine();
