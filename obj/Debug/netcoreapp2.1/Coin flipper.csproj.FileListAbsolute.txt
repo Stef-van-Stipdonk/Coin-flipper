@@ -9,3 +9,13 @@ E:\projects\code stuff\C#\coin-flipper\Coin flipper\obj\Debug\netcoreapp2.1\Coin
 E:\projects\code stuff\C#\coin-flipper\Coin flipper\obj\Debug\netcoreapp2.1\Coin flipper.AssemblyInfo.cs
 E:\projects\code stuff\C#\coin-flipper\Coin flipper\obj\Debug\netcoreapp2.1\Coin flipper.dll
 E:\projects\code stuff\C#\coin-flipper\Coin flipper\obj\Debug\netcoreapp2.1\Coin flipper.pdb
+C:\my files\School-coding\Coding\booktracker\Coin-flipper\obj\Debug\netcoreapp2.1\Coin flipper.csprojAssemblyReference.cache
+C:\my files\School-coding\Coding\booktracker\Coin-flipper\obj\Debug\netcoreapp2.1\Coin flipper.AssemblyInfoInputs.cache
+C:\my files\School-coding\Coding\booktracker\Coin-flipper\obj\Debug\netcoreapp2.1\Coin flipper.AssemblyInfo.cs
+C:\my files\School-coding\Coding\booktracker\Coin-flipper\obj\Debug\netcoreapp2.1\Coin flipper.dll
+C:\my files\School-coding\Coding\booktracker\Coin-flipper\obj\Debug\netcoreapp2.1\Coin flipper.pdb
+C:\my files\School-coding\Coding\booktracker\Coin-flipper\bin\Debug\netcoreapp2.1\Coin flipper.deps.json
+C:\my files\School-coding\Coding\booktracker\Coin-flipper\bin\Debug\netcoreapp2.1\Coin flipper.runtimeconfig.json
+C:\my files\School-coding\Coding\booktracker\Coin-flipper\bin\Debug\netcoreapp2.1\Coin flipper.runtimeconfig.dev.json
+C:\my files\School-coding\Coding\booktracker\Coin-flipper\bin\Debug\netcoreapp2.1\Coin flipper.dll
+C:\my files\School-coding\Coding\booktracker\Coin-flipper\bin\Debug\netcoreapp2.1\Coin flipper.pdb

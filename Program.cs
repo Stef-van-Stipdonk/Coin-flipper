@@ -6,22 +6,19 @@ namespace Coin_flipper
     {
         static void Main(string[] args)
         {
-
             Console.WriteLine("Enter a number of your choice: ");
+
+            string enterNumber = Console.ReadLine();
             try
             {
-                int intNumb = Convert.ToInt32(Console.ReadLine());
+                Convert.ToInt32(enterNumber);
+
             }
             catch
             {
-                Console.WriteLine("This is not a number");
+                Console.WriteLine("Error while converting to int");
             }
 
-            Random r = new Random();
-
-            int ranNumb = r.Next(1, 2);
-
-            Console.WriteLine(ranNumb);
         }
     }
 }
