@@ -46,7 +46,6 @@ namespace Coin_flipper
                     Console.WriteLine("Enter a number:");
                     chances = Console.ReadLine();
                     chancesDouble = Convert.ToDouble(chances);
-                    Console.ReadLine();
                     if (chancesDouble < 1 && chancesDouble > 0)
                     {
                         correct = false;
