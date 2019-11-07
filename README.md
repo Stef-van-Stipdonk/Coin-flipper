@@ -1,7 +1,8 @@
 Coin flipper
 
 Flips your coins and shows you the stats, why you ask?
-Because it can.
+Because it can.  
+If I think of more stats to track I'll add them later
 
 Stats shown:
 - number of coins flips  
@@ -12,3 +13,4 @@ Stats shown:
 - How many coins have landed in the gutter chanace, 1 in 1000
 - How many coins have landed on the side chance, 1 in 1000
 - The largest streak and which side got the largest streak
+
